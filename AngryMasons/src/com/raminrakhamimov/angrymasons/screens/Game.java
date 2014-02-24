@@ -2,10 +2,12 @@ package com.raminrakhamimov.angrymasons.screens;
 
 import com.badlogic.gdx.Screen;
 import com.raminrakhamimov.angrymasons.AngryMasons;
+import com.raminrakhamimov.angrymasons.view.World;
 
 public class Game implements Screen {
 
 	private AngryMasons game;
+	World world;
 
 	public Game(AngryMasons game) {
 		this.game = game;
@@ -24,7 +26,6 @@ public class Game implements Screen {
 
 	@Override
 	public void show() {
-		// TODO Auto-generated method stub
 		
 	}
 

@@ -1,7 +1,9 @@
 package com.raminrakhamimov.angrymasons.screens;
 
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -9,9 +11,13 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton.TextButtonStyle;
+import com.badlogic.gdx.scenes.scene2d.utils.Align;
+
 import com.raminrakhamimov.angrymasons.AngryMasons;
 
 public class MainMenu implements Screen{
@@ -24,6 +30,7 @@ public class MainMenu implements Screen{
 	Skin skin;
 	SpriteBatch batch;
 	TextButton button;
+	Label label;
 	
 	
 	public MainMenu(AngryMasons game) {
@@ -39,7 +46,6 @@ public class MainMenu implements Screen{
 		
 		batch.begin();
 		stage.draw();
-		black.draw(batch, "Angry Masons", Gdx.graphics.getWidth()/2-15, Gdx.graphics.getHeight()/2+100);
 		batch.end();
 		
 	}
@@ -56,7 +62,7 @@ public class MainMenu implements Screen{
 		style.down = skin.getDrawable("buttonpressed");
 		style.font = black;
 		
-		button = new TextButton("Press Me!", style);	
+		button = new TextButton("PLAY!", style);	
 		button.setWidth(400);
 		button.setHeight(100);
 		button.setX(Gdx.graphics.getWidth()/2 - button.getWidth()/2);
@@ -76,6 +82,15 @@ public class MainMenu implements Screen{
 				game.setScreen(new Game(game));
 			}
 		});
+		
+		LabelStyle ls = new LabelStyle(white, Color.WHITE);
+		label = new Label("Angry Masons", ls);
+		label.setX(0);
+		label.setY(Gdx.graphics.getHeight() / 2 + 100);
+		label.setWidth(width);
+		label.setAlignment(Align.center);
+		
+		stage.addActor(label);
 		stage.addActor(button);
 	}
 

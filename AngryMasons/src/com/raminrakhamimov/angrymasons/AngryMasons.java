@@ -4,7 +4,7 @@ import com.badlogic.gdx.Game;
 import com.raminrakhamimov.angrymasons.screens.SplashScreen;
 
 public class AngryMasons extends Game {
-	public static final String VERSION = "0.1";
+	public static final String VERSION = "0.0.0.02";
 	public static final String LOG = "Angry Masons";
 	
 	@Override
