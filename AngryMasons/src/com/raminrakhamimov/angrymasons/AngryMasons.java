@@ -1,6 +1,7 @@
 package com.raminrakhamimov.angrymasons;
 
 import com.badlogic.gdx.Game;
+import com.raminrakhamimov.angrymasons.screens.GameScreen;
 import com.raminrakhamimov.angrymasons.screens.SplashScreen;
 
 public class AngryMasons extends Game {
@@ -9,7 +10,7 @@ public class AngryMasons extends Game {
 	
 	@Override
 	public void create() {	
-		setScreen(new SplashScreen(this));
+		setScreen(new GameScreen(this));
 	}
 
 	@Override
