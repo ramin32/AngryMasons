@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
@@ -37,6 +39,7 @@ public class MainMenu implements Screen{
 		
 		batch.begin();
 		stage.draw();
+		black.draw(batch, "Angry Masons", Gdx.graphics.getWidth()/2-15, Gdx.graphics.getHeight()/2+100);
 		batch.end();
 		
 	}
@@ -59,6 +62,20 @@ public class MainMenu implements Screen{
 		button.setX(Gdx.graphics.getWidth()/2 - button.getWidth()/2);
 		button.setY(Gdx.graphics.getHeight()/2 - button.getHeight()/2);
 		
+		button.addListener(new InputListener() {
+
+			@Override
+			public boolean touchDown(InputEvent event, float x, float y,
+					int pointer, int button) {
+				return true;
+			}
+
+			@Override
+			public void touchUp(InputEvent event, float x, float y,
+					int pointer, int button) {
+				game.setScreen(new Game(game));
+			}
+		});
 		stage.addActor(button);
 	}
 
